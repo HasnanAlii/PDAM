@@ -1,12 +1,6 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-2xl text-blue-800 leading-tight flex items-center gap-2">
-            <x-lucide-image class="w-6 h-6 text-blue-700" />
-            Detail Galeri
-        </h2>
-    </x-slot>
 
-    <div class="max-w-5xl mx-auto py-10 px-6">
+    <div class="max-w-5xl mx-auto py-10 px-6 mt-20">
         <!-- Card Container -->
         <div class="bg-white rounded-2xl shadow-md p-8 border border-blue-100">
             

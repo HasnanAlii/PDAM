@@ -60,7 +60,7 @@
             <span>GALERI</span>
         </x-nav-link>
 
-        {{-- <!-- Cek Tagihan -->
+        <!-- Cek Tagihan -->
         <x-nav-link href="{{ route('cektagihan.index') }}" :active="request()->routeIs('cektagihan.index')" 
             class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
             <i data-feather="credit-card" class="w-5 h-5"></i>
@@ -72,7 +72,7 @@
             class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
             <i data-feather="activity" class="w-5 h-5"></i>
             <span>SIMULASI</span>
-        </x-nav-link> --}}
+        </x-nav-link> 
         
     </div> 
     <div class="w-full h-[4px] bg-yellow-500 "></div>

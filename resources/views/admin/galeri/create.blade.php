@@ -1,9 +1,5 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-2xl text-blue-800 leading-tight">🖼️ Tambah Gambar Galeri</h2>
-    </x-slot>
-
-    <div class="max-w-4xl mx-auto py-10 px-6">
+    <div class="max-w-4xl mx-auto py-10 px-6 mt-32">
         <!-- Notifikasi sukses -->
         @if (session('success'))
             <div class="mb-6 bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-lg shadow-sm">
@@ -24,6 +20,8 @@
 
         <!-- Form Tambah Galeri -->
         <div class="bg-white rounded-xl shadow-md p-8 border border-blue-100">
+            <h3 class="text-lg font-semibold text-blue-700 mb-6 border-b pb-2">🖼️ Formulir Tambah Gambar Galeri</h3>
+
             <form action="{{ route('galeri.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                 @csrf
 
@@ -47,20 +45,20 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Gambar</label>
                     <input type="file" name="gambar"
-                           class="w-full border border-blue-200 rounded-lg px-4 py-2 file:mr-4 file:py-2 file:px-4
-                                  file:rounded-lg file:border-0 file:text-sm file:font-semibold
-                                  file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                           class="w-full border border-blue-200 rounded-lg px-4 py-2
+                                  file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0
+                                  file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700
+                                  hover:file:bg-blue-100">
                 </div>
 
                 <!-- Tombol Simpan -->
-                <div class="pt-4">
-                    <a href="{{ route('admin.galeri.index') }}"
-                       class=" text-blue-600 hover:underline">
+                <div class="pt-4 flex items-center justify-between">
+                    <a href="{{ route('admin.galeri.index') }}" class="text-blue-600 hover:underline">
                         ← Kembali
                     </a>
                     <button type="submit"
-                            class="ml-2 bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200">
-                        Simpan
+                            class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200">
+                        💾 Simpan
                     </button>
                 </div>
             </form>

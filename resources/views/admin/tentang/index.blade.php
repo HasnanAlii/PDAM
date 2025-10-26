@@ -30,10 +30,10 @@
         <!-- 🔹 Header -->
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-blue-800">Kelola Tentang Kami</h1>
-            {{-- <a href="{{ route('admin.tentang.create') }}"
+            <a href="{{ route('admin.tentang.create') }}"
                class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2">
                 <x-lucide-plus class="w-4 h-4" /> Tambah Tentang Kami
-            </a> --}}
+            </a>
         </div>
 
         <!-- 🔹 Tabel Tentang Kami -->
@@ -46,6 +46,7 @@
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Profil</th>
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Visi</th>
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Misi</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold border-b">Gambar</th>
                         <th class="px-6 py-3 text-center text-sm font-semibold border-b">Aksi</th>
                     </tr>
                 </thead>
@@ -57,6 +58,13 @@
                             <td class="px-6 py-3 border-b">{{ Str::limit($item->profil, 50) }}</td>
                             <td class="px-6 py-3 border-b">{{ Str::limit($item->visi, 50) }}</td>
                             <td class="px-6 py-3 border-b">{{ Str::limit($item->misi, 50) }}</td>
+                            <td class="px-6 py-3 border-b">
+                                @if($item->gambar)
+                                    <img src="{{ asset('storage/' . $item->gambar) }}" class="w-20 h-12 object-contain rounded-md shadow-sm">
+                                @else
+                                    <span class="text-gray-400">-</span>
+                                @endif
+                            </td>
                             <td class="px-6 py-3 border-b text-center">
                                 <div class="flex justify-center gap-2">
                                     <a href="{{ route('admin.tentang.edit', $item->id) }}"

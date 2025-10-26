@@ -74,37 +74,7 @@
                             </div>
                         </form>
                     </div>
-{{-- 
-                    <!-- 📰 Berita Terpopuler -->
-                    <div class="bg-yellow-50 rounded-xl shadow p-6 border-l-4 border-[#004d93]">
-                        <h3 class="text-lg font-semibold text-[#004d93] mb-4 border-b border-yellow-200 pb-2">
-                            BERITA TERPOPULER
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3">
-                                <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden">
-                                    <img src="https://via.placeholder.com/80x80" class="object-cover w-full h-full" alt="">
-                                </div>
-                                <div>
-                                    <a href="#" class="font-medium text-[#004d93] hover:underline">
-                                        Prosedur Pembayaran Tagihan Air
-                                    </a>
-                                    <p class="text-xs text-gray-500">20 Okt 2025</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-3">
-                                <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden">
-                                    <img src="https://via.placeholder.com/80x80" class="object-cover w-full h-full" alt="">
-                                </div>
-                                <div>
-                                    <a href="#" class="font-medium text-[#004d93] hover:underline">
-                                        Pemeliharaan Jaringan Air Cianjur
-                                    </a>
-                                    <p class="text-xs text-gray-500">18 Sep 2025</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> --}}
+
                 </aside>
             </div>
         </div>

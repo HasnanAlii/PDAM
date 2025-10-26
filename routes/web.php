@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CekTagihanController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SimulasiController;
 use App\Http\Controllers\TentangKamiController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,17 +61,30 @@ Route::middleware('auth')->group(function () {
     Route::put('/tentang-kami/{tentangKami}', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
     Route::delete('/tentang-kami/{tentangKami}', [TentangKamiController::class, 'destroy'])->name('admin.tentang.destroy');
 
-     Route::get('/partners', [PartnerController::class, 'admin'])->name('admin.partner.index');
+    Route::get('/partners', [PartnerController::class, 'admin'])->name('admin.partner.index');
     Route::get('/partners/create', [PartnerController::class, 'create'])->name('admin.partner.create');
     Route::post('/partners', [PartnerController::class, 'store'])->name('admin.partner.store');
     Route::get('/partners/{partner}/edit', [PartnerController::class, 'edit'])->name('admin.partner.edit');
     Route::put('/partners/{partner}', [PartnerController::class, 'update'])->name('admin.partner.update');
     Route::delete('/partners/{partner}', [PartnerController::class, 'destroy'])->name('admin.partner.destroy');
+
+    Route::get('/simulasions', [SimulasiController::class, 'admin'])->name('admin.simulasi.index');
+    Route::get('/simulasions/create', [SimulasiController::class, 'create'])->name('admin.simulasi.create');
+    Route::post('/simulasions', [SimulasiController::class, 'store'])->name('admin.simulasi.store');
+    Route::get('/simulasions/{simulasi}/edit', [SimulasiController::class, 'edit'])->name('admin.simulasi.edit');
+    Route::put('/simulasions/{simulasi}', [SimulasiController::class, 'update'])->name('admin.simulasi.update');
+    Route::delete('/simulasions/{simulasi}', [SimulasiController::class, 'destroy'])->name('admin.simulasi.destroy');
 });
 
 
 
     Route::get('/partner-view', [PartnerController::class, 'tampil'])->name('partner.user');
+
+    Route::get('/cek-tagihan', [CekTagihanController::class, 'index'])->name('cektagihan.index');
+    Route::post('/cek-tagihan', [CekTagihanController::class, 'cek'])->name('cektagihan.cek');
+
+    Route::get('/simulasi', [SimulasiController::class, 'index'])->name('simulasi.index');
+    Route::post('/simulasi/hitung', [SimulasiController::class, 'hitung'])->name('simulasi.hitung');
 
     Route::get('/tentangkami', [TentangKamiController::class, 'index'])->name('tentangkami.index'); 
     Route::get('/tentang-kami/{tentangKami}', [TentangKamiController::class, 'show'])->name('tentang.show');

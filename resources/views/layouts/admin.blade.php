@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'Dashboard Admin') }}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/logo.png') }}">
+
 
     <!-- Fonts & Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -32,28 +34,18 @@
                 </a>
 
                 <a href="{{ route('admin.berita.index') }}"
-                class="flex items-center px-4 py-2 rounded-md transition
-                {{ request()->routeIs('admin.berita.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
-                <x-lucide-settings class="w-4 h-4 mr-2" /> Kelola Beranda
-                   </a>
-            
-            {{-- 
-                <a href="{{ route('admin.galeri.index') }}"
-                   class="flex items-center px-4 py-2 rounded-md transition
-                   {{ request()->routeIs('admin.galeri.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
-                    <x-lucide-image class="w-4 h-4 mr-2" /> Galeri
+                    class="flex items-center px-4 py-2 rounded-md transition
+                    {{ request()->routeIs('admin.berita.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
+                    <x-lucide-settings class="w-4 h-4 mr-2" /> Kelola Beranda
                 </a>
 
-                 <a href="{{ route('admin.tentang.index') }}"
-                   class="flex items-center px-4 py-2 rounded-md transition
-                   {{ request()->routeIs('admin.tentang.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
-                    <x-lucide-image class="w-4 h-4 mr-2" /> tentang
+                <a href="{{ route('admin.simulasi.index') }}"
+                    class="flex items-center px-4 py-2 rounded-md transition
+                    {{ request()->routeIs('admin.simulasi.*') ? 'bg-blue-700 font-semibold text-white' : 'hover:bg-blue-700 hover:font-semibold' }}">
+                    <x-lucide-droplet class="w-4 h-4 mr-2" /> Kelola Simulasi
                 </a>
-                   <a href="{{ route('admin.partner.index') }}"
-                   class="flex items-center px-4 py-2 rounded-md transition
-                   {{ request()->routeIs('admin.partner.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
-                    <x-lucide-image class="w-4 h-4 mr-2" /> partner
-                </a> --}}
+
+          
             </nav>
 
             <!-- 🔸 Logout -->

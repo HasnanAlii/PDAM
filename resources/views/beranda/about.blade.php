@@ -15,7 +15,7 @@
                 @if ($tentangkami && $tentangkami->gambar)
                     <img src="{{ asset('storage/' . $tentangkami->gambar) }}" 
                          alt="{{ $tentangkami->judul }}" 
-                         class="rounded-xl shadow-md w-full h-80 object-cover mb-8 mx-auto">
+                         class="rounded-xl shadow-md w-full object-cover mb-8 mx-auto">
                 @endif
 
                 <div class="space-y-8">
@@ -25,13 +25,13 @@
                     </div>
 
                     <div>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-blue-700 mb-3">Visi</h2>
-                        <p class="italic text-gray-600 text-lg">{{ $tentangkami->visi ?? '-' }}</p>
+                        <h2 class="text-2xl md:text-3xl  font-semibold text-blue-700 mb-3">Visi</h2>
+                        <p class="italic text-gray-600  text-lg">{{ $tentangkami->visi ?? '-' }}</p>
                     </div>
 
                     <div>
                         <h2 class="text-2xl md:text-3xl font-semibold text-blue-700 mb-3">Misi</h2>
-                        <p class="text-gray-700 text-lg whitespace-pre-line">{{ $tentangkami->misi ?? '-' }}</p>
+                        <p class="text-gray-700 text-lg text-left whitespace-pre-line">{{ $tentangkami->misi ?? '-' }}</p>
                     </div>
                 </div>
 

@@ -2,52 +2,107 @@
     <div class="bg-[#f9fafb] min-h-screen">
 
         <!-- 🔹 Hero Section -->
-        <div class="bg-[#fff8d6] shadow-inner">
-            <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-black mb-4 leading-snug border-l-4 border-[#004d93] pl-4">
-                        Perumdam Tirta Mukti
-                    </h2>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Perumda Air Minum Tirta Raharja merupakan perusahaan daerah yang bergerak di bidang penyediaan dan pengelolaan air bersih untuk masyarakat Kabupaten Cianjur.
-                        Kami berkomitmen memberikan pelayanan prima melalui sistem distribusi air yang berkualitas, efisien, dan berkelanjutan.
-                    </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Dengan semangat profesionalisme dan inovasi, Tirta Raharja terus berupaya meningkatkan kepuasan pelanggan serta mendukung pembangunan daerah melalui pelayanan air minum yang sehat dan terjangkau.
-                    </p>
-                </div>
+      <div class="bg-[#fff8d6] shadow-inner">
+        <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+            <!-- Bagian Kiri -->
+            <div>
+                <h2 class="text-3xl font-bold text-black mb-4 leading-snug border-l-4 border-[#004d93] pl-4">
+                    Perumdam Tirta Mukti
+                </h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Perumda Air Minum Tirta Raharja merupakan perusahaan daerah yang bergerak di bidang penyediaan 
+                    dan pengelolaan air bersih untuk masyarakat Kabupaten Cianjur.
+                    Kami berkomitmen memberikan pelayanan prima melalui sistem distribusi air yang berkualitas, efisien, dan berkelanjutan.
+                </p>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Dengan semangat profesionalisme dan inovasi, Tirta Raharja terus berupaya meningkatkan kepuasan pelanggan 
+                    serta mendukung pembangunan daerah melalui pelayanan air minum yang sehat dan terjangkau.
+                </p>
+            </div>
 
-                <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-[#fcd34d]/40 hover:shadow-xl transition">
-                    <img src="{{ asset('images/pdam-profil.jpg') }}" 
-                        alt="Profil Perumda Air Minum Tirta Raharja" 
-                        class="w-full h-full object-cover">
-                </div>
-            </section>
-        </div>
-
-        <!-- 🔹 Info Cepat -->
-        <section class="bg-yellow-50 py-16 shadow-inner">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6 text-center">
-                @php
-                    $infos = [
-                        ['icon' => 'book-open', 'title' => 'BERITA', 'desc' => 'Lihat berita, kegiatan, dan pengumuman terbaru dari Perumdam Tirta Mukti.'],
-                        ['icon' => 'file-text', 'title' => 'CEK TAGIHAN', 'desc' => 'Periksa tagihan air Anda secara online dengan mudah dan cepat.'],
-                        ['icon' => 'droplet', 'title' => 'HITUNG TARIF', 'desc' => 'Simulasikan biaya pemakaian air berdasarkan jumlah penggunaan bulanan.'],
-                        ['icon' => 'activity', 'title' => 'SIMULASI HARGA', 'desc' => 'Hitung perkiraan total biaya air berdasarkan golongan pelanggan dan jumlah pemakaian.'],
-                    ];
-                @endphp
-
-                @foreach ($infos as $info)
-                    <div class="p-8 bg-white rounded-2xl shadow-md border-t-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition transform">
-                        <div class="flex justify-center mb-4">
-                            <i data-feather="{{ $info['icon'] }}" class="text-black" width="40" height="40"></i>
+            <!-- Bagian Kanan (Swiper Slider) -->
+            <div class="relative">
+                <div class="pb-12">
+                     
+                    <div class="swiper mySwiper rounded-2xl overflow-hidden shadow-lg border-4 border-[#fcd34d]/40 hover:shadow-xl transition">
+                        <div class="swiper-wrapper">
+                     @foreach ($beritas as $berita)
+                        <div class="swiper-slide bg-white rounded-2xl overflow-hidden shadow-md">
+                            <a href="{{ route('berita.show', $berita->id) }}" class="block hover:opacity-90 transition">
+                                <div class="relative">
+                                    <img 
+                                        src="{{ asset('storage/' . $berita->gambar) }}" 
+                                        alt="{{ $berita->judul }}" 
+                                        class="w-full h-80 object-cover"
+                                        onerror="this.style.display='none'">
+                                </div>
+                                <!-- Judul di bawah gambar -->
+                                <div class="p-4 bg-[#004d93] text-white text-center">
+                                    <h2 class="text-lg font-semibold truncate">{{ $berita->judul }}</h2>
+                                </div>
+                            </a>
                         </div>
-                        <h3 class="font-bold text-black text-lg mb-2 tracking-wide">{{ $info['title'] }}</h3>
-                        <p class="text-sm text-gray-700 leading-relaxed">{{ $info['desc'] }}</p>
+                    @endforeach
+
+                        </div>
+                        <!-- Navigasi -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> 
+                        <!-- Pagination -->
                     </div>
-                @endforeach
+                        <div class="swiper-pagination"></div>
+                </div>
             </div>
         </section>
+    </div>
+
+
+
+        <!-- 🔹 Info Cepat -->
+    <section class="bg-yellow-50 py-16 shadow-inner">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6 text-center">
+            @php
+                $infos = [
+                    [
+                        'icon' => 'book-open',
+                        'title' => 'BERITA',
+                        'desc' => 'Lihat berita, kegiatan, dan pengumuman terbaru dari Perumdam Tirta Mukti.',
+                        'href' => route('berita.index'),
+                    ],
+                    [
+                        'icon' => 'file-text',
+                        'title' => 'CEK TAGIHAN',
+                        'desc' => 'Periksa tagihan air Anda secara online dengan mudah dan cepat.',
+                        'href' => route('cektagihan.index'),
+                    ],
+                    [
+                        'icon' => 'activity',
+                        'title' => 'SIMULASI HARGA',
+                        'desc' => 'Hitung perkiraan total biaya air berdasarkan golongan pelanggan dan jumlah pemakaian.',
+                        'href' => route('simulasi.index'),
+                    ],
+                    [
+                        'icon' => 'info',
+                        'title' => 'TENTANG KAMI',
+                        'desc' => 'Lihat profil, visi, dan misi Perumdam Tirta Mukti.',
+                        'href' => route('tentangkami.index'),
+                    ],
+                ];
+            @endphp
+
+            @foreach ($infos as $info)
+                <a href="{{ $info['href'] }}" 
+                class="p-8 bg-white rounded-2xl shadow-md border-t-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition transform block">
+                    <div class="flex justify-center mb-4">
+                        <i data-feather="{{ $info['icon'] }}" class="text-black" width="40" height="40"></i>
+                    </div>
+                    <h3 class="font-bold text-black text-lg mb-2 tracking-wide">{{ $info['title'] }}</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">{{ $info['desc'] }}</p>
+                </a>
+            @endforeach
+        </div>
+    </section>
+
 
    <!-- 🔹 Headline News -->
 <div class="bg-[#fff8d6] shadow-inner">
@@ -67,7 +122,7 @@
                             <div class="overflow-hidden rounded-lg mb-4 border-2 border-[#fcd34d]/40">
                                 <img src="{{ asset('storage/' . $berita->gambar) }}" 
                                      alt="{{ $berita->judul }}" 
-                                     class="w-full h-56 object-cover hover:scale-105 transition duration-300">
+                                     class="w-full h-96 object-cover hover:scale-105 transition duration-300">
                             </div>
                         @endif
                         
