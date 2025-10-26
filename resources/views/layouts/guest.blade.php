@@ -26,7 +26,7 @@
         </div>
 
         <!-- Form Login -->
-        <div class="w-full sm:max-w-md mt-6 mx-6 my-6  shadow-md border-2 sm:rounded-xl">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-6    sm:rounded-xl">
             {{ $slot }}
         </div>
 
