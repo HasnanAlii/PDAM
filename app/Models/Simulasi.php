@@ -10,10 +10,10 @@ class Simulasi extends Model
     use HasFactory;
 
     protected $fillable = [
-        'golongan',
-        'pemakaian_air',
-        'tarif_per_m3',
-        'biaya_admin',
-        'total_tagihan',
+                  'golongan',
+            'tarif_0_10' ,
+            'tarif_11_20' ,
+            'tarif_21' ,
+            'biaya_admin' ,
     ];
 }

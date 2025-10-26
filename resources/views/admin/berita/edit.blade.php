@@ -24,7 +24,7 @@
 
             <form method="POST" action="{{ route('berita.update', $berita->id) }}" enctype="multipart/form-data" class="space-y-6">
                 @csrf
-                @method('PUT')
+                @method('PATCH')
 
                 <!-- Judul -->
                 <div>

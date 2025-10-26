@@ -27,7 +27,7 @@ class PartnerController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
             'link' => 'nullable|url|max:255',
         ]);
 
@@ -51,7 +51,7 @@ class PartnerController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
             'link' => 'nullable|url|max:255',
         ]);
 

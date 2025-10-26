@@ -35,6 +35,7 @@
             <main>
                 {{ $slot }}
             </main>
+            @include('layouts.footer')
         </div>
           <!-- Feather Icons Init -->
     <script>

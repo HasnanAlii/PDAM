@@ -18,7 +18,7 @@
             @if($berita->gambar)
                 <div class="overflow-hidden rounded-lg mb-6 border-2 border-[#fcd34d]/40">
                     <img src="{{ asset('storage/' . $berita->gambar) }}" 
-                         class="w-full h-96 object-cover" 
+                         class="w-full  object-cover" 
                          alt="{{ $berita->judul }}">
                 </div>
             @endif

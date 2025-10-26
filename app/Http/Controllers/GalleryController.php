@@ -32,7 +32,7 @@ class GalleryController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
         ]);
 
         $path = null;
@@ -64,7 +64,7 @@ class GalleryController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
         ]);
 
         $path = $galeri->gambar;
@@ -94,4 +94,9 @@ class GalleryController extends Controller
 
         return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil dihapus.');
     }
-}
+    public function detail(Gallery $gallery)
+    {
+        return view('galeri.show', compact('gallery'));
+    }
+
+    }

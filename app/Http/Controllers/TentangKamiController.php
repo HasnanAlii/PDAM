@@ -46,7 +46,7 @@ class TentangKamiController extends Controller
             'profil' => 'nullable|string',
             'visi'   => 'nullable|string',
             'misi'   => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
         ]);
 
         // Upload gambar jika ada
@@ -77,7 +77,7 @@ class TentangKamiController extends Controller
             'profil' => 'nullable|string',
             'visi'   => 'nullable|string',
             'misi'   => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:25600',
         ]);
 
         // Ganti gambar jika ada file baru

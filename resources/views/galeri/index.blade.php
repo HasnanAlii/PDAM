@@ -27,17 +27,16 @@
 
                                 <!-- Overlay -->
                                 <div class="absolute inset-0 bg-[#004d93]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                    <button 
-                                        onclick="showModal('{{ asset('storage/' . $gallery->gambar) }}', '{{ $gallery->judul }}', '{{ $gallery->deskripsi }}')" 
-                                        class="bg-[#fcd34d] text-[#004d93] px-4 py-2 rounded-md font-semibold shadow hover:bg-[#fcd34d]/80 transition">
-                                        Lihat Detail
-                                    </button>
+                                 <a href="{{ route('galeri.detail', $gallery->id) }}" 
+                                    class="bg-[#fcd34d] text-[#004d93] px-4 py-2 rounded-md font-semibold shadow hover:bg-[#fcd34d]/80 transition">
+                                    Lihat Detail
+                                    </a>
                                 </div>
                             </div>
 
-                            <div class="p-4 text-center">
+                            {{-- <div class="p-4 text-center">
                                 <h3 class="text-lg font-semibold text-[#004d93]">{{ $gallery->judul }}</h3>
-                            </div>
+                            </div> --}}
                         </div>
                     @endforeach
                 </div>
@@ -48,40 +47,6 @@
                 </div>
             @endif
         </section>
-    </div>
 
-    <!-- 🔹 Modal Preview -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
-        <div class="bg-yellow-50 rounded-xl shadow-lg max-w-lg w-full mx-4 overflow-hidden border border-[#fcd34d]/60">
-            <div class="relative">
-                <img id="modalImage" src="" alt="Preview" class="w-full h-80 object-cover">
-                <button onclick="closeModal()" class="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-[#fcd34d]/40">
-                    <i data-feather="x" class="w-5 h-5 text-[#004d93]"></i>
-                </button>
-            </div>
-            <div class="p-5">
-                <h2 id="modalTitle" class="text-xl font-bold text-[#004d93]"></h2>
-                <p id="modalDesc" class="text-gray-700 mt-2 text-sm"></p>
-            </div>
-        </div>
-    </div>
 
-    <!-- 🔹 Feather & Modal Script -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        feather.replace();
-
-        function showModal(image, title, desc) {
-            document.getElementById('modalImage').src = image;
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerText = desc;
-            document.getElementById('imageModal').classList.remove('hidden');
-            document.getElementById('imageModal').classList.add('flex');
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.add('hidden');
-            document.getElementById('imageModal').classList.remove('flex');
-        }
-    </script>
 </x-app-layout>

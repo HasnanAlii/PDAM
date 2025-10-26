@@ -15,7 +15,7 @@
                 <div class="overflow-hidden rounded-xl shadow-sm mb-6">
                     <img src="{{ asset('storage/' . $galeri->gambar) }}"
                          alt="{{ $galeri->judul }}"
-                         class="w-full h-[400px] object-cover rounded-xl border border-blue-100">
+                         class="w-full  object-cover rounded-xl border border-blue-100">
                 </div>
             @endif
 

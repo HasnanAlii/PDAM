@@ -3,7 +3,7 @@
         @if ($berita->gambar)
             <div class="overflow-hidden rounded-lg mb-4 border-2 border-[#fcd34d]/40">
                 <img src="{{ asset('storage/' . $berita->gambar) }}" 
-                     class="w-full h-96 object-cover hover:scale-105 transition duration-300" 
+                     class="w-full object-cover hover:scale-105 transition duration-300" 
                      alt="{{ $berita->judul }}">
             </div>
         @endif
