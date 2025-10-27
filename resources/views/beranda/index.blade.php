@@ -94,55 +94,98 @@
         </div>
     </section>
 
-
-   <!-- 🔹 Headline News -->
-<div class="bg-[#fff8d6] shadow-inner">
-    <section class="py-16 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-black border-b-4 border-[#004d93] inline-block pb-2">
+<div class="bg-gradient-to-b bg-[#fff8d6]  to-[#fff8d6] py-10">
+    <section class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[#004d93] border-b-4 border-[#fcd34d] inline-block pb-2 animate-bounce">
                 HEADLINE NEWS
             </h2>
         </div>
 
-        @if ($beritas->count() > 0)
-            <div class="grid md:grid-cols-2 gap-8">
-                @foreach ($beritas as $berita)
-                    <article class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
-                        
-                        @if($berita->gambar)
-                            <div class="overflow-hidden rounded-lg mb-4 border-2 border-[#fcd34d]/40">
-                                <img src="{{ asset('storage/' . $berita->gambar) }}" 
-                                     alt="{{ $berita->judul }}" 
-                                     class="w-full h-96 object-cover hover:scale-105 transition duration-300">
-                            </div>
-                        @endif
-                        
-                        <h3 class="font-bold text-lg text-[#004d93] mb-2 hover:text-[#fcd34d] transition">
-                            <a href="{{ route('berita.show', $berita) }}">{{ $berita->judul }}</a>
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">
-                            {{ \Carbon\Carbon::parse($berita->tanggal)->translatedFormat('d M Y') }}
-                        </p>
-                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                            {!! Str::limit(strip_tags($berita->isi), 150, '...') !!}
-                        </p>
-                        <a href="{{ route('berita.show', $berita) }}" class="text-[#015b97] text-sm font-semibold hover:text-[#fcd34d] transition">
-                            Selengkapnya →
-                        </a>
-                    </article>
-                @endforeach
-            </div>
-        @else
-            <p class="text-center text-gray-600 mt-6">Belum ada berita yang tersedia.</p>
-        @endif
+      @if ($beritas->count() > 0)
+    <div class="relative">
+        <!-- Vertical line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
 
-        <div class="text-center mt-10">
-            <a href="{{ route('berita.index') }}" class="bg-[#015b97] hover:bg-[#004d93] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:text-[#fcd34d] transition">
+        <div class="space-y-4">
+            @foreach ($beritas->take(4) as $index => $berita) <!-- batasi maksimal 5 -->
+                @php
+                    $isLeft = $index % 2 == 0;
+                @endphp
+                <div class="md:flex md:items-center md:justify-between relative">
+                    @if($isLeft)
+                        <!-- Konten kiri -->
+                        <div class="md:w-5/12 md:pr-4 md:text-right">
+                            <div class="bg-yellow-50 p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+                                <h3 class="font-bold text-lg text-[#004d93] mb-1 hover:text-[#fcd34d] transition flex items-center justify-end">
+                                    <span class="mr-2">📌</span>
+                                    <a href="{{ route('berita.show', $berita) }}">{{ $berita->judul }}</a>
+                                </h3>
+                                <p class="text-sm text-gray-500 mb-1">
+                                    {{ \Carbon\Carbon::parse($berita->tanggal)->translatedFormat('d M Y') }}
+                                </p>
+                                <p class="text-gray-700 text-sm leading-relaxed mb-2">
+                                    {!! Str::limit(strip_tags($berita->isi), 150, '...') !!}
+                                </p>
+                                <a href="{{ route('berita.show', $berita) }}" class="text-[#015b97] text-sm font-semibold hover:text-[#fcd34d] transition">
+                                    Selengkapnya →
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    @else
+                        <div class="md:w-5/12"></div>
+                        <!-- Konten kanan -->
+                        <div class="md:w-5/12 md:pl-4 md:text-left">
+                            <div class="bg-yellow-50 p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+                                <h3 class="font-bold text-lg text-[#004d93] mb-1 hover:text-[#fcd34d] transition flex items-center">
+                                    <span class="mr-2">📌</span>
+                                    <a href="{{ route('berita.show', $berita) }}">{{ $berita->judul }}</a>
+                                </h3>
+                                <p class="text-sm text-gray-500 mb-1">
+                                    {{ \Carbon\Carbon::parse($berita->tanggal)->translatedFormat('d M Y') }}
+                                </p>
+                                <p class="text-gray-700 text-sm leading-relaxed mb-2">
+                                    {!! Str::limit(strip_tags($berita->isi), 150, '...') !!}
+                                </p>
+                                <a href="{{ route('berita.show', $berita) }}" class="text-[#015b97] text-sm font-semibold hover:text-[#fcd34d] transition">
+                                    Selengkapnya →
+                                </a>
+                            </div>
+                        </div>
+                    @endif
+
+                    <!-- Timeline Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 rounded-full w-5 h-5 border-2 border-[#fcd34d]/40 z-10 bg-white"></div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@else
+    <p class="text-center text-gray-600 mt-6">Belum ada berita yang tersedia.</p>
+@endif
+
+
+        <div class="text-center mt-12">
+            <a href="{{ route('berita.index') }}" class="bg-[#015b97] hover:bg-[#004d93] text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:text-[#fcd34d] transition duration-300">
                 Lihat Berita Lainnya
             </a>
         </div>
     </section>
 </div>
+
+<!-- Tailwind Animasi Tambahan -->
+<style>
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+    animation: fadeIn 0.7s forwards;
+}
+</style>
+
+
 
 
         <!-- 🔹 Partner Section -->

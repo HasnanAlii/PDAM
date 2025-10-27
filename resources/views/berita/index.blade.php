@@ -39,41 +39,42 @@
 
 
  
-                    <!-- 🗳️ Pemungutan Suara -->
-                    <div class="bg-yellow-50 rounded-xl shadow p-6 border-l-4 border-[#004d93]">
-                        <h3 class="text-lg font-semibold text-[#004d93] mb-4 border-b border-yellow-200 pb-2">
-                            PEMUNGUTAN SUARA
-                        </h3>
-                        <p class="text-sm text-gray-700 mb-4">
-                            Bagaimana kualitas pelayanan Perumdam Tirta Mukti saat ini?
-                        </p>
-                        <form class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="radio" name="vote" class="text-[#004d93] focus:ring-[#004d93]">
-                                <span class="ml-2">Sangat Baik</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="radio" name="vote" class="text-[#004d93] focus:ring-[#004d93]">
-                                <span class="ml-2">Baik</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="radio" name="vote" class="text-[#004d93] focus:ring-[#004d93]">
-                                <span class="ml-2">Cukup</span>
-                            </label>
+              <div class="bg-yellow-50 rounded-xl shadow p-6 border-l-4 border-[#004d93]">
+    <h3 class="text-lg font-semibold text-[#004d93] mb-4 border-b border-yellow-200 pb-2">
+        HEADLINE NEWS
+    </h3>
 
-                            <input type="text" placeholder="Nomor Pelanggan" 
-                                   class="w-full border rounded-md p-2 text-sm mt-3 focus:ring-[#fcd34d] focus:border-[#004d93]">
-                            <input type="text" placeholder="Nomor Kontak" 
-                                   class="w-full border rounded-md p-2 text-sm focus:ring-[#fcd34d] focus:border-[#004d93]">
+    @if ($beritas->count() > 0)
+        <div class="space-y-4">
+            @foreach ($beritas->take(3) as $berita)
+                <div class="border border-yellow-200 rounded-lg p-3 hover:bg-yellow-100 transition">
+                    <h4 class="text-[#004d93] font-semibold text-base">
+                        {{ $berita->judul }}
+                    </h4>
 
-                            <div class="flex items-center gap-2 mt-3">
-                                <button type="button" class="bg-[#004d93] text-white px-3 py-1.5 rounded-md hover:bg-[#003b72] text-sm">
-                                    Proses
-                                </button>
-                                <a href="#" class="text-[#004d93] text-sm hover:underline">Lihat Hasil</a>
-                            </div>
-                        </form>
+                    <p class="text-sm text-gray-700 mt-1 line-clamp-3">
+                        {{ Str::limit(strip_tags($berita->isi ?? ''), 120, '...') }}
+                    </p>
+
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="text-xs text-gray-500">
+                            {{ $berita->created_at->format('d M Y') }}
+                        </span>
+                        <a href="{{ route('berita.show', $berita->id) }}" 
+                           class="text-[#004d93] text-sm font-medium hover:underline">
+                            Baca Selengkapnya
+                        </a>
                     </div>
+                </div>
+            @endforeach
+        </div>
+    @else
+        <p class="text-gray-500 italic text-sm text-center mt-4">
+            Belum ada berita terbaru.
+        </p>
+    @endif
+</div>
+
 
                 </aside>
             </div>
