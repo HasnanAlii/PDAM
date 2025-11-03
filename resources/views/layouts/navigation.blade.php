@@ -45,37 +45,37 @@
 
             <!-- Menu Desktop -->
             <div class="hidden md:flex space-x-3">
-                <x-nav-link href="{{ route('beranda.index') }}" :active="request()->routeIs('beranda.index')" 
+                <x-nav-link href="{{ route('beranda.index') }}" :active="request()->routeIs('beranda.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-150 ease-in-out">
                     <i data-feather="home" class="w-5 h-5"></i>
                     <span>BERANDA</span>
                 </x-nav-link>
 
-                <x-nav-link href="{{ route('tentangkami.index') }}" :active="request()->routeIs('tentangkami.index')" 
+                <x-nav-link href="{{ route('tentangkami.index') }}" :active="request()->routeIs('tentangkami.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
                     <i data-feather="info" class="w-5 h-5"></i>
                     <span>TENTANG KAMI</span>
                 </x-nav-link>
 
-                <x-nav-link href="{{ route('berita.index') }}" :active="request()->routeIs('berita.index')" 
+                <x-nav-link href="{{ route('berita.index') }}" :active="request()->routeIs('berita.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-150 ease-in-out">
                     <i data-feather="file-text" class="w-5 h-5"></i>
                     <span>BERITA</span>
                 </x-nav-link>
 
-                <x-nav-link href="{{ route('galeri.index') }}" :active="request()->routeIs('galeri.index')" 
+                <x-nav-link href="{{ route('galeri.index') }}" :active="request()->routeIs('galeri.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
                     <i data-feather="image" class="w-5 h-5"></i>
                     <span>GALERI</span>
                 </x-nav-link>
 
-                <x-nav-link href="{{ route('cektagihan.index') }}" :active="request()->routeIs('cektagihan.index')" 
+                <x-nav-link href="{{ route('cektagihan.index') }}" :active="request()->routeIs('cektagihan.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
                     <i data-feather="credit-card" class="w-5 h-5"></i>
                     <span>CEK TAGIHAN</span>
                 </x-nav-link>
 
-                <x-nav-link href="{{ route('simulasi.index') }}" :active="request()->routeIs('simulasi.index')" 
+                <x-nav-link href="{{ route('simulasi.index') }}" :active="request()->routeIs('simulasi.*')" 
                     class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-150 ease-in-out">
                     <i data-feather="activity" class="w-5 h-5"></i>
                     <span>SIMULASI</span>
@@ -86,22 +86,22 @@
         <!-- Menu Mobile -->
         <div class="md:hidden" x-show="open" @click.away="open = false">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <x-nav-link href="{{ route('beranda.index') }}" :active="request()->routeIs('beranda.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-600">
+                <x-nav-link href="{{ route('beranda.index') }}" :active="request()->routeIs('beranda.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-600">
                     BERANDA
                 </x-nav-link>
-                <x-nav-link href="{{ route('tentangkami.index') }}" :active="request()->routeIs('tentangkami.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
+                <x-nav-link href="{{ route('tentangkami.index') }}" :active="request()->routeIs('tentangkami.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
                     TENTANG KAMI
                 </x-nav-link>
-                <x-nav-link href="{{ route('berita.index') }}" :active="request()->routeIs('berita.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-600">
+                <x-nav-link href="{{ route('berita.index') }}" :active="request()->routeIs('berita.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-600">
                     BERITA
                 </x-nav-link>
-                <x-nav-link href="{{ route('galeri.index') }}" :active="request()->routeIs('galeri.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
+                <x-nav-link href="{{ route('galeri.index') }}" :active="request()->routeIs('galeri.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
                     GALERI
                 </x-nav-link>
-                <x-nav-link href="{{ route('cektagihan.index') }}" :active="request()->routeIs('cektagihan.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
+                <x-nav-link href="{{ route('cektagihan.index') }}" :active="request()->routeIs('cektagihan.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
                     CEK TAGIHAN
                 </x-nav-link>
-                <x-nav-link href="{{ route('simulasi.index') }}" :active="request()->routeIs('simulasi.index')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
+                <x-nav-link href="{{ route('simulasi.index') }}" :active="request()->routeIs('simulasi.*')" class="block px-3 py-2 rounded-md hover:bg-yellow-500">
                     SIMULASI
                 </x-nav-link>
             </div>

@@ -1,29 +1,40 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+<x-admin-layout>
+  <div class="p-8">
+    <h2 class="font-bold text-2xl text-gray-800 mb-6 flex items-center gap-2">
+        <x-lucide-user class="w-6 h-6 text-blue-700" />
+        {{ __('Profil Pengguna') }}
+    </h2>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
+    <div class="space-y-8 max-w-5xl">
+        <!-- 🔹 Update Informasi Profil -->
+        <div class="bg-white shadow-md rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">
+                {{ __('Informasi Profil') }}
+            </h3>
+            <div class="max-w-xl">
+                @include('profile.partials.update-profile-information-form')
             </div>
+        </div>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
+        <!-- 🔹 Ganti Kata Sandi -->
+        <div class="bg-white shadow-md rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">
+                {{ __('Ganti Kata Sandi') }}
+            </h3>
+            <div class="max-w-xl">
+                @include('profile.partials.update-password-form')
             </div>
+        </div>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
+        <!-- 🔹 Hapus Akun -->
+        <div class="bg-white shadow-md rounded-2xl p-6 border border-red-200">
+            <h3 class="text-lg font-semibold text-red-600 mb-4 border-b pb-2">
+                {{ __('Hapus Akun') }}
+            </h3>
+            <div class="max-w-xl">
+                @include('profile.partials.delete-user-form')
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+</x-admin-layout>

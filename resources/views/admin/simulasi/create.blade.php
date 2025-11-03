@@ -22,7 +22,7 @@
         <div class="bg-white rounded-xl shadow-md p-8 border border-blue-100">
             <h3 class="text-lg font-semibold text-blue-700 mb-6 border-b pb-2">🧮 Formulir Input Simulasi</h3>
 
-            <form action="{{ route('admin.simulasi.store') }}" method="POST" class="space-y-6">
+            <form action="{{ route('simulasion.store') }}" method="POST" class="space-y-6">
                 @csrf
 
                 <!-- Golongan -->
@@ -66,7 +66,7 @@
 
                 <!-- Tombol -->
                 <div class="pt-4 flex items-center justify-between">
-                    <a href="{{ route('admin.simulasi.index') }}" class="text-blue-600 hover:underline">
+                    <a href="{{ route('simulasion.index') }}" class="text-blue-600 hover:underline">
                         ← Kembali
                     </a>
                     <button type="submit"

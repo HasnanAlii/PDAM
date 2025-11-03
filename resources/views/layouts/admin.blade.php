@@ -35,29 +35,37 @@
 
                 <a href="{{ route('admin.berita.index') }}"
                     class="flex items-center px-4 py-2 rounded-md transition
-                    {{ request()->routeIs('admin.berita.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
+                    {{ request()->routeIs('admin.*') ? 'bg-blue-700 font-semibold' : 'hover:bg-blue-700 hover:font-semibold' }}">
                     <x-lucide-settings class="w-4 h-4 mr-2" /> Kelola Beranda
                 </a>
 
-                <a href="{{ route('admin.simulasi.index') }}"
+                <a href="{{ route('simulasion.index') }}"
                     class="flex items-center px-4 py-2 rounded-md transition
-                    {{ request()->routeIs('admin.simulasi.*') ? 'bg-blue-700 font-semibold text-white' : 'hover:bg-blue-700 hover:font-semibold' }}">
+                    {{ request()->routeIs('simulasion.*') ? 'bg-blue-700 font-semibold text-white' : 'hover:bg-blue-700 hover:font-semibold' }}">
                     <x-lucide-droplet class="w-4 h-4 mr-2" /> Kelola Simulasi
                 </a>
 
           
             </nav>
 
-            <!-- 🔸 Logout -->
-            <div class="p-4 border-t border-blue-700">
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit"
-                        class="w-full flex items-center justify-center gap-2 bg-blue-700 px-3 py-2 rounded-md hover:bg-blue-600 transition">
-                        <x-lucide-log-out class="w-4 h-4" /> Logout
-                    </button>
-                </form>
-            </div>
+          <!-- 🔸 Edit Profil & Logout -->
+        <div class="p-4 border-t border-blue-700 space-y-2">
+            <!-- Tombol Edit Profil -->
+            <a href="{{ route('profile.edit') }}"
+                class="w-full flex items-center justify-center gap-2 bg-blue-700 px-3 py-2 rounded-md hover:bg-blue-600 transition text-white">
+                <x-lucide-user class="w-4 h-4" /> Edit Profil
+            </a>
+
+            <!-- Tombol Logout -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"
+                    class="w-full flex items-center justify-center gap-2 bg-blue-700 px-3 py-2 rounded-md hover:bg-blue-600 transition text-white">
+                    <x-lucide-log-out class="w-4 h-4" /> Logout
+                </button>
+            </form>
+        </div>
+
         </aside>
 
         <!-- 🔹 Konten Utama -->

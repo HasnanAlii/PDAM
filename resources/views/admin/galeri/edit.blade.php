@@ -22,7 +22,7 @@
         <div class="bg-white rounded-xl shadow-md p-8 border border-blue-100">
             <h3 class="text-lg font-semibold text-blue-700 mb-6 border-b pb-2">🖼️ Edit Gambar Galeri</h3>
 
-            <form action="{{ route('galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <form action="{{ route('admin.galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                 @csrf
                 @method('PATCH') <!-- gunakan PATCH sesuai route -->
 
@@ -66,7 +66,7 @@
                     </a>
                     <button type="submit"
                             class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200">
-                        💾 Simpan
+                        Simpan Perubahan
                     </button>
                 </div>
             </form>

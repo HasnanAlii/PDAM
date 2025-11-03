@@ -18,7 +18,7 @@
             {!! Str::limit(strip_tags($berita->isi), 300, '...') !!}
         </div>
         {{-- <span class="text-sm text-blue-600 font-semibold">#{{ $berita->kategori }}</span> --}}
-        <a href="{{ route('user.berita.show', $berita) }}" 
+        <a href="{{ route('berita.show', $berita) }}" 
            class="inline-block bg-[#004d93] text-white px-5 py-2 rounded-lg hover:bg-[#003b72] transition mt-3">
             Baca Selengkapnya →
         </a>

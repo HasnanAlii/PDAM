@@ -4,7 +4,7 @@
         <!-- 🔹 Header -->
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-blue-800">Kelola Data Simulasi PDAM</h1>
-            <a href="{{ route('admin.simulasi.create') }}"
+            <a href="{{ route('simulasion.create') }}"
                class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2">
                 <x-lucide-plus class="w-4 h-4" /> Tambah Data
             </a>
@@ -35,11 +35,11 @@
                             <td class="px-6 py-3 border-b text-center">Rp {{ number_format($s->biaya_admin, 0, ',', '.') }}</td>
                             <td class="px-6 py-3 border-b text-center">
                                 <div class="flex justify-center gap-3">
-                                    <a href="{{ route('admin.simulasi.edit', $s->id) }}"
+                                    <a href="{{ route('simulasion.edit', $s->id) }}"
                                        class="text-blue-600 hover:text-yellow-800 flex items-center gap-1">
                                         <x-lucide-edit class="w-4 h-4" /> Edit
                                     </a>
-                                    <form action="{{ route('admin.simulasi.destroy', $s->id) }}" method="POST"
+                                    <form action="{{ route('simulasion.destroy', $s->id) }}" method="POST"
                                           onsubmit="return confirm('Yakin ingin menghapus data ini?')" class="inline-block">
                                         @csrf
                                         @method('DELETE')

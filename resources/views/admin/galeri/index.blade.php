@@ -34,7 +34,7 @@
         <!-- 🔹 Header -->
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-blue-800">Manajemen Galeri</h1>
-            <a href="{{ route('galeri.create') }}"
+            <a href="{{ route('admin.galeri.create') }}"
                class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2">
                 <x-lucide-plus class="w-4 h-4" /> Tambah Gambar
             </a>
@@ -69,13 +69,13 @@
 
                         <!-- Tombol Aksi -->
                         <div class="flex justify-between items-center border-t pt-3 text-sm">
-                            <a href="{{ route('galeri.show', $item->id) }}"
+                            <a href="{{ route('admin.galeri.show', $item->id) }}"
                                class="text-blue-600 hover:text-blue-800 font-medium">Lihat</a>
 
-                            <a href="{{ route('galeri.edit', $item->id) }}"
+                            <a href="{{ route('admin.galeri.edit', $item->id) }}"
                                class="text-yellow-500 hover:text-yellow-600 font-medium">Edit</a>
 
-                            <form action="{{ route('galeri.destroy', $item->id) }}" method="POST"
+                            <form action="{{ route('admin.galeri.destroy', $item->id) }}" method="POST"
                                   onsubmit="return confirm('Yakin ingin menghapus data ini?')" class="inline">
                                 @csrf @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Hapus</button>

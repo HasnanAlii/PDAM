@@ -22,7 +22,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
     Route::get('/berita/filter', [BeritaController::class, 'filter'])->name('berita.filter');
+    Route::get('/partner-view', [PartnerController::class, 'tampil'])->name('beranda.partner');
+
+    Route::get('/cek-tagihan', [CekTagihanController::class, 'index'])->name('cektagihan.index');
+    Route::post('/cek-tagihan', [CekTagihanController::class, 'cek'])->name('cektagihan.cek');
+
+    Route::get('/simulasi', [SimulasiController::class, 'index'])->name('simulasi.index');
+    Route::post('/simulasi/hitung', [SimulasiController::class, 'hitung'])->name('simulasi.hitung');
+
+    Route::get('/tentangkami', [TentangKamiController::class, 'index'])->name('tentangkami.index'); 
+
+    Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
+    Route::get('/berita/{berita}', [BeritaController::class, 'show'])->name('berita.show');
+
+    Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri.index');
+    Route::get('/galeri/{gallery}', [GalleryController::class, 'detail'])->name('galeri.detail');
 
 
 
@@ -37,22 +53,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/partner/{partner}', [PartnerController::class, 'destroy'])->name('partner.destroy');
 
     Route::get('/beritas', [BeritaController::class, 'admin'])->name('admin.berita.index');
-    Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
-    Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
-    Route::get('/berita/{berita}', [BeritaController::class, 'show'])->name('berita.show');
-    Route::get('/berita/{berita}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
-    Route::patch('/berita/{berita}', [BeritaController::class, 'update'])->name('berita.update');
-    Route::delete('/berita/{berita}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+    Route::get('/beritas/create', [BeritaController::class, 'create'])->name('berita.create');
+    Route::post('/beritas', [BeritaController::class, 'store'])->name('berita.store');
+    Route::get('/beritas/{berita}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
+    Route::patch('/beritas/{berita}', [BeritaController::class, 'update'])->name('berita.update');
+    Route::delete('/beritas/{berita}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
 
     Route::get('/galeries', [GalleryController::class, 'admin'])->name('admin.galeri.index');
-    Route::get('/galeri/create', [GalleryController::class, 'create'])->name('galeri.create');
-    Route::post('/galeri', [GalleryController::class, 'store'])->name('galeri.store');
-    Route::get('/galeries/{gallery}', [GalleryController::class, 'detail'])->name('galeri.detail');
-    Route::get('/galeri/{galeri}', [GalleryController::class, 'show'])->name('galeri.show');
-    Route::get('/galeri/{galeri}/edit', [GalleryController::class, 'edit'])->name('galeri.edit');
-    Route::patch('/galeri/{galeri}', [GalleryController::class, 'update'])->name('galeri.update');
-    Route::delete('/galeri/{galeri}', [GalleryController::class, 'destroy'])->name('galeri.destroy');
+    Route::get('/galeries/create', [GalleryController::class, 'create'])->name('admin.galeri.create');
+    Route::post('/galeries', [GalleryController::class, 'store'])->name('admin.galeri.store');
+    Route::get('/galeries/{galeri}', [GalleryController::class, 'show'])->name('admin.galeri.show');
+    Route::get('/galeries/{galeri}/edit', [GalleryController::class, 'edit'])->name('admin.galeri.edit');
+    Route::patch('/galeries/{galeri}', [GalleryController::class, 'update'])->name('admin.galeri.update');
+    Route::delete('/galeries/{galeri}', [GalleryController::class, 'destroy'])->name('admin.galeri.destroy');
 
 
     Route::get('/tentang-kami', [TentangKamiController::class, 'admin'])->name('admin.tentang.index');
@@ -69,34 +83,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/partners/{partner}', [PartnerController::class, 'update'])->name('admin.partner.update');
     Route::delete('/partners/{partner}', [PartnerController::class, 'destroy'])->name('admin.partner.destroy');
 
-    Route::get('/simulasions', [SimulasiController::class, 'admin'])->name('admin.simulasi.index');
-    Route::get('/simulasions/create', [SimulasiController::class, 'create'])->name('admin.simulasi.create');
-    Route::post('/simulasions', [SimulasiController::class, 'store'])->name('admin.simulasi.store');
-    Route::get('/simulasions/{simulasi}/edit', [SimulasiController::class, 'edit'])->name('admin.simulasi.edit');
-    Route::put('/simulasions/{simulasi}', [SimulasiController::class, 'update'])->name('admin.simulasi.update');
-    Route::delete('/simulasions/{simulasi}', [SimulasiController::class, 'destroy'])->name('admin.simulasi.destroy');
+    Route::get('/simulasions', [SimulasiController::class, 'admin'])->name('simulasion.index');
+    Route::get('/simulasions/create', [SimulasiController::class, 'create'])->name('simulasion.create');
+    Route::post('/simulasions', [SimulasiController::class, 'store'])->name('simulasion.store');
+    Route::get('/simulasions/{simulasi}/edit', [SimulasiController::class, 'edit'])->name('simulasion.edit');
+    Route::put('/simulasions/{simulasi}', [SimulasiController::class, 'update'])->name('simulasion.update');
+    Route::delete('/simulasions/{simulasi}', [SimulasiController::class, 'destroy'])->name('simulasion.destroy');
 });
-
-
-
-    Route::get('/partner-view', [PartnerController::class, 'tampil'])->name('partner.user');
-
-    Route::get('/cek-tagihan', [CekTagihanController::class, 'index'])->name('cektagihan.index');
-    Route::post('/cek-tagihan', [CekTagihanController::class, 'cek'])->name('cektagihan.cek');
-
-    Route::get('/simulasi', [SimulasiController::class, 'index'])->name('simulasi.index');
-    Route::post('/simulasi/hitung', [SimulasiController::class, 'hitung'])->name('simulasi.hitung');
-
-    Route::get('/tentangkami', [TentangKamiController::class, 'index'])->name('tentangkami.index'); 
-    Route::get('/tentang-kami/{tentangKami}', [TentangKamiController::class, 'show'])->name('tentang.show');
-
-    Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
-    Route::get('/beritas/{berita}', [BeritaController::class, 'showw'])->name('user.berita.show');
-
-    
-
-
-    Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri.index');
-
-
 require __DIR__.'/auth.php';

@@ -178,16 +178,16 @@
 </div>
 
 
-<!-- Tailwind Animasi Tambahan -->
-<style>
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-    animation: fadeIn 0.7s forwards;
-}
-</style>
+        <!-- Tailwind Animasi Tambahan -->
+        <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.7s forwards;
+        }
+        </style>
 
 
 
@@ -214,7 +214,7 @@
                             </a>
                         @endforeach
                     </div>
-                <a href="{{ route('partner.user') }}" class="inline-block bg-[#004d93] hover:bg-[#015b97] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:text-[#fcd34d] transition">
+                <a href="{{ route('beranda.partner') }}" class="inline-block bg-[#004d93] hover:bg-[#015b97] text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:text-[#fcd34d] transition">
                     Lihat Partner Lainnya
                 </a>
             </div>
