@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/galeries', [GalleryController::class, 'admin'])->name('admin.galeri.index');
     Route::get('/galeri/create', [GalleryController::class, 'create'])->name('galeri.create');
     Route::post('/galeri', [GalleryController::class, 'store'])->name('galeri.store');
-    Route::get('/galeri/{gallery}', [GalleryController::class, 'detail'])->name('galeri.detail');
+    Route::get('/galeries/{gallery}', [GalleryController::class, 'detail'])->name('galeri.detail');
     Route::get('/galeri/{galeri}', [GalleryController::class, 'show'])->name('galeri.show');
     Route::get('/galeri/{galeri}/edit', [GalleryController::class, 'edit'])->name('galeri.edit');
     Route::patch('/galeri/{galeri}', [GalleryController::class, 'update'])->name('galeri.update');
