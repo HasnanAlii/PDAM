@@ -1,35 +1,36 @@
 <nav x-data="{ open: false }" class="bg-white border-gray-100">
 
     <!-- 🔹 Header -->
-    <div class="text-white py-6 shadow-lg" style="background-color: #004d93;">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-center md:space-x-8">
-            
-            <!-- 🔹 Logo -->
-            <div class="flex-shrink-0 mb-4 md:mb-0">
-                <img src="{{ asset('storage/logo.png') }}" 
-                     alt="Logo Perumdam Tirta Mukti" 
-                     class="h-24 md:h-40 w-auto mx-auto md:mx-0">
-            </div>
+<div class="text-white py-6 shadow-lg" style="background-color: #004d93;">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8">
+        
+        <!-- 🔹 Logo -->
+        <div class="flex-shrink-0">
+            <img src="{{ asset('storage/logo.png') }}" 
+                 alt="Logo Perumdam Tirta Mukti" 
+                 class="h-24 md:h-40 w-auto">
+        </div>
 
-            <!-- 🔹 Teks -->
-            <div class="flex-1 text-center md:text-left">
-                <h1 class="text-2xl md:text-4xl font-bold tracking-wide text-white">
-                    Perumdam Tirta Mukti
-                </h1>
+        <!-- 🔹 Teks -->
+        <div class="flex-1">
+            <h1 class="text-2xl md:text-4xl font-bold tracking-wide text-white">
+                Perumdam Tirta Mukti
+            </h1>
 
-                <!-- 🔹 Garis pemisah -->
-                <div class="w-48 md:w-96 h-[2px] bg-blue-200 mx-auto md:mx-0 my-2 md:my-3"></div>
+            <!-- 🔹 Garis pemisah -->
+            <div class="w-48 md:w-96 h-[2px] bg-blue-200 my-2 md:my-3"></div>
 
-                <p class="text-sm md:text-lg" style="color: #cce4f7;">
-                    Jl. Pangeran Hidayatullah No.162, Cianjur, Jawa Barat
-                </p>
-            </div>
+            <p class="text-sm md:text-lg" style="color: #cce4f7;">
+                Jl. Pangeran Hidayatullah No.162, Cianjur, Jawa Barat
+            </p>
         </div>
     </div>
+</div>
+
 
     <!-- 🔹 Navbar Utama -->
     <div class="bg-[#015b97] text-white shadow-md">
-    <div class="max-w-7xl mx-auto py-2 flex  space-x-3   px-4   h-12 md:h-auto items-center justify-between md:justify-start">
+    <div class="max-w-7xl mx-auto py-2 flex  space-x-3   px-4   h-12 md:h-auto items-center justify-start md:justify-start">
 
     <div class="flex-shrink-0 md:hidden"></div>
 
