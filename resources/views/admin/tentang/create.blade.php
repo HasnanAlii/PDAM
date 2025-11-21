@@ -30,7 +30,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Profil</label>
                     <textarea name="profil" rows="4"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Tulis profil perusahaan atau instansi...">{{ old('profil') }}</textarea>
+                              placeholder="Tulis profil perusahaan atau instansi..." required>{{ old('profil') }}</textarea>
                 </div>
 
                 <!-- Visi -->
@@ -38,7 +38,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Visi</label>
                     <textarea name="visi" rows="3"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Masukkan visi organisasi...">{{ old('visi') }}</textarea>
+                              placeholder="Masukkan visi organisasi..." required>{{ old('visi') }}</textarea>
                 </div>
 
                 <!-- Misi -->
@@ -46,7 +46,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Misi</label>
                     <textarea name="misi" rows="4"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Masukkan misi organisasi...">{{ old('misi') }}</textarea>
+                              placeholder="Masukkan misi organisasi..." required>{{ old('misi') }}</textarea>
                 </div>
 
                 <!-- Gambar -->

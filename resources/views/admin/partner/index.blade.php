@@ -42,7 +42,7 @@
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Nama</th>
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Logo</th>
                         <th class="px-6 py-3 text-left text-sm font-semibold border-b">Link</th>
-                        <th class="px-6 py-3 text-left text-sm font-semibold border-b">Aksi</th>
+                        <th class="px-6 py-3 text-center text-sm font-semibold border-b">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700">

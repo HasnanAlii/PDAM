@@ -31,7 +31,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Profil</label>
                     <textarea name="profil" rows="4"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Tulis profil terbaru...">{{ old('profil', $tentangKami->profil) }}</textarea>
+                              placeholder="Tulis profil terbaru..." required>{{ old('profil', $tentangKami->profil) }}</textarea>
                 </div>
 
                 <!-- Visi -->
@@ -39,7 +39,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Visi</label>
                     <textarea name="visi" rows="3"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Masukkan visi organisasi...">{{ old('visi', $tentangKami->visi) }}</textarea>
+                              placeholder="Masukkan visi organisasi..." required>{{ old('visi', $tentangKami->visi) }}</textarea>
                 </div>
 
                 <!-- Misi -->
@@ -47,7 +47,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Misi</label>
                     <textarea name="misi" rows="4"
                               class="w-full border border-blue-200 rounded-lg px-4 py-2 focus:ring-blue-500 focus:border-blue-500"
-                              placeholder="Masukkan misi organisasi...">{{ old('misi', $tentangKami->misi) }}</textarea>
+                              placeholder="Masukkan misi organisasi..." required>{{ old('misi', $tentangKami->misi) }}</textarea>
                 </div>
 
                 <!-- Gambar -->
@@ -62,7 +62,7 @@
                                   file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0
                                   file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700
                                   hover:file:bg-blue-100">
-                    <p class="text-sm text-gray-500 mt-1">Unggah hanya jika ingin mengganti gambar.</p>
+                    <p class="text-sm text-gray-500 mt-1"required>Unggah hanya jika ingin mengganti gambar.</p>
                 </div>
 
                 <!-- Tombol Aksi -->

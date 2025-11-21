@@ -30,10 +30,10 @@
         <!-- 🔹 Header -->
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-blue-800">Kelola Tentang Kami</h1>
-            <a href="{{ route('admin.tentang.create') }}"
+            {{-- <a href="{{ route('admin.tentang.create') }}"
                class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center gap-2">
                 <x-lucide-plus class="w-4 h-4" /> Tambah Tentang Kami
-            </a>
+            </a> --}}
         </div>
 
         <!-- 🔹 Tabel Tentang Kami -->
@@ -71,7 +71,7 @@
                                        class="text-blue-700 hover:text-blue-900 flex items-center gap-1">
                                         <x-lucide-edit class="w-4 h-4" /> Edit
                                     </a>
-                                    <form method="POST" action="{{ route('admin.tentang.destroy', $item->id) }}"
+                                    {{-- <form method="POST" action="{{ route('admin.tentang.destroy', $item->id) }}"
                                           onsubmit="return confirm('Yakin ingin menghapus data ini?');">
                                         @csrf
                                         @method('DELETE')
@@ -79,7 +79,7 @@
                                                 class="text-red-600 hover:text-red-800 flex items-center gap-1">
                                             <x-lucide-trash class="w-4 h-4" /> Hapus
                                         </button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </td>
                         </tr>

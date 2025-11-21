@@ -40,8 +40,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 text-gray-700">
                         <div><strong>Nama:</strong> {{ $data['nama'] ?? '-' }}</div>
-                        <div><strong>Status:</strong> {{ $data['status'] ?? '-' }}</div>
-                        <div><strong>Cabang:</strong> {{ $data['cabang'] ?? '-' }}</div>
+                        <div><strong>No Pelanggan:</strong> {{ $data['no_pelanggan'] ?? '-' }}</div>
                         <div><strong>Golongan:</strong> {{ $data['golongan'] ?? '-' }}</div>
                     </div>
 
@@ -52,12 +51,8 @@
                                 <th class="px-4 py-2 border">Stand Awal</th>
                                 <th class="px-4 py-2 border">Stand Akhir</th>
                                 <th class="px-4 py-2 border">M³</th>
-                                <th class="px-4 py-2 border">Air</th>
-                                <th class="px-4 py-2 border">Biaya Pemeliharaan</th>
                                 <th class="px-4 py-2 border">Denda</th>
                                 <th class="px-4 py-2 border">Materai</th>
-                                <th class="px-4 py-2 border">Besar Cicilan</th>
-                                <th class="px-4 py-2 border">Cicilan Ke</th>
                                 <th class="px-4 py-2 border">Total</th>
                                 <th class="px-4 py-2 border">Status Bayar</th>
                             </tr>
@@ -65,16 +60,12 @@
                         <tbody class="text-gray-700">
                             @forelse($data['tagihan'] ?? [] as $tagihan)
                                 <tr class="border-b hover:bg-[#fcd34d]/20 transition">
-                                    <td class="px-2 py-1 border">{{ $tagihan['bulan_tahun'] }}</td>
+                                    <td class="px-2 py-1 border">{{ $tagihan['bulan'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['stand_awal'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['stand_akhir'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['m3'] }}</td>
-                                    <td class="px-2 py-1 border">{{ $tagihan['air'] }}</td>
-                                    <td class="px-2 py-1 border">{{ $tagihan['biaya_pemeliharaan'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['denda'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['materai'] }}</td>
-                                    <td class="px-2 py-1 border">{{ $tagihan['besar_cicilan'] }}</td>
-                                    <td class="px-2 py-1 border">{{ $tagihan['cicilan_ke'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['total'] }}</td>
                                     <td class="px-2 py-1 border">{{ $tagihan['status_bayar'] }}</td>
                                 </tr>
