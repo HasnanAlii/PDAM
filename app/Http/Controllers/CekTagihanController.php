@@ -13,30 +13,43 @@ class CekTagihanController extends Controller
         return view('cektagihan.index');
     }
 
-    // Proses cek tagihan dari API
     public function cek(Request $request)
-    {
-        $request->validate([
-            'nomor_pelanggan' => 'required|string',
+{
+    $request->validate([
+        'nomor_pelanggan_rel' => 'required|string',
+    ]);
+
+    $nomorPelanggan = $request->nomor_pelanggan_rel;
+
+    try {
+        $response = Http::get('http://120.89.90.102:1030/api/transaksi/' . $nomorPelanggan);
+
+        if ($response->successful()) {
+            $json = $response->json();
+
+            $filtered = collect($json['data'] ?? [])
+                ->where('nomor_langganan_rel', $nomorPelanggan)
+                ->values();
+
+            $pelanggan = $filtered->first()['pelanggan'] ?? null;
+
+            return view('cektagihan.index', [
+                'data' => $filtered,
+                'pelanggan' => $pelanggan,
+                'nomorPelanggan' => $nomorPelanggan
+            ]);
+        }
+
+        return view('cektagihan.index')->withErrors([
+            'nomor_pelanggan_rel' => 'Gagal mengambil data dari server'
         ]);
 
-        $nomorPelanggan = $request->nomor_pelanggan;
-
-        try {
-            // Contoh request API eksternal
-            $response = Http::get('https://api.sistemlain.com/tagihan', [
-                'nomor_pelanggan' => $nomorPelanggan,
-                'api_key' => env('API_SISTEM_LAIN_KEY'),
-            ]);
-
-            if ($response->successful()) {
-                $data = $response->json();
-                return view('cektagihan.index', compact('data', 'nomorPelanggan'));
-            } else {
-                return back()->withErrors(['nomor_pelanggan' => 'Gagal mengambil data tagihan.']);
-            }
-        } catch (\Exception $e) {
-            return back()->withErrors(['nomor_pelanggan' => 'Terjadi kesalahan: ' . $e->getMessage()]);
-        }
+    } catch (\Exception $e) {
+        return view('cektagihan.index')->withErrors([
+            'nomor_pelanggan_rel' => 'Terjadi kesalahan: ' . $e->getMessage()
+        ]);
     }
+}
+
+
 }

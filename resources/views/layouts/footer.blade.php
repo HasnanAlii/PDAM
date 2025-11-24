@@ -50,7 +50,7 @@
             <ul class="text-gray-200 text-sm space-y-2">
                 <li>📍 Jl. Pangeran Hidayatullah, Limbangansari, Cianjur, Jawa Barat 43211</li>
                 <li>📞 (0263) 261157</li>
-                <li>📧 info@tirta-murti.co.id</li>
+                <li>📧 info@tirta-mukti.co.id</li>
             </ul>
 
             <!-- Sosial Media -->
