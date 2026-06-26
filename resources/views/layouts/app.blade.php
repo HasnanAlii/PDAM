@@ -6,7 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Perumdam Tirta Mukti') }}</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo.png') }}">
+
 
 
         <!-- Fonts -->

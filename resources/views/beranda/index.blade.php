@@ -1,8 +1,3 @@
-
-
-
-
-
 <x-app-layout>
     <div class="bg-[#f9fafb] min-h-screen">
 
@@ -14,15 +9,24 @@
                 <div class="pb-6 sm:pb-12">
                     <div class="swiper mySwiper rounded-2xl overflow-hidden shadow-lg border-2 sm:border-4 border-[#fcd34d]/40 hover:shadow-xl transition">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="{{ asset('storage/pdam1.jpg') }}" alt="Gambar 1" class="w-full h-64 sm:h-80 object-cover">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ asset('storage/pdam2.jpeg') }}" alt="Gambar 2" class="w-full h-64 sm:h-80 object-cover">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ asset('storage/pdam3.png') }}" alt="Gambar 3" class="w-full h-64 sm:h-80 object-cover">
-                            </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/pdam1.jpg') }}"
+                            alt="Gambar 1"
+                            class="w-full h-64 sm:h-80 object-cover">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/pdam2.jpeg') }}"
+                            alt="Gambar 2"
+                            class="w-full h-64 sm:h-80 object-cover">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/pdam3.png') }}"
+                            alt="Gambar 3"
+                            class="w-full h-64 sm:h-80 object-cover">
+                    </div>
+
                         </div>
                         <!-- Tombol navigasi -->
                         <div class="swiper-button-next"></div>

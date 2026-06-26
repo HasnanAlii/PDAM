@@ -6,9 +6,10 @@
         
         <!-- 🔹 Logo -->
         <div class="flex-shrink-0">
-            <img src="{{ asset('storage/logo.png') }}" 
-                 alt="Logo Perumdam Tirta Mukti" 
-                 class="h-24 md:h-40 w-auto">
+           <img src="{{ asset('assets/images/logo.png') }}"
+            alt="Logo Perumdam Tirta Mukti"
+            class="h-24 md:h-40 w-auto">
+
         </div>
 
         <!-- 🔹 Teks -->

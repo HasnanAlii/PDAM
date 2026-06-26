@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'Dashboard Admin') }}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo.png') }}">
+
+    
 
 
     <!-- Fonts & Styles -->

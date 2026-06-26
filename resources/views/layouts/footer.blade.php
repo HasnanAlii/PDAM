@@ -5,7 +5,7 @@
         <!-- 🏢 Tentang -->
         <div>
             <div class="flex items-center mb-4">
-                <img src="{{ asset('storage/logo.png') }}" 
+             <img src="{{ asset('assets/images/logo.png') }}"
                      alt="Logo Perumdam Tirta Mukti" 
                      class="h-16 w-auto">
                 <h3 class="text-lg font-semibold leading-tight ml-3">
